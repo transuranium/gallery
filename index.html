@@ -1,62 +1,243 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Gallery</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Galería de productos de resina epoxi</title>
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
-    <header class="header">
-      <h1>Gallery</h1>
+    <header class="site-header">
+      <a class="brand" href="#home">PSICO EPOXY</a>
+      <nav class="nav">
+        <a href="#tables">Mesas</a>
+        <a href="#clocks">Relojes</a>
+        <a href="#paintings">Pinturas</a>
+        <a href="#mirrors">Espejos</a>
+        <a href="#workshop">Taller</a>
+        <a href="#souvenirs">Recuerdos</a>
+        <a href="#partners">Cooperación</a>
+      </nav>
+      <button class="nav-toggle" aria-label="Меню"></button>
     </header>
-    <div class="gallery">
-      <img src="img/1.jpg" alt="" />
-      <img src="img/2.jpg" alt="" />
-      <img src="img/3.jpg" alt="" />
-      <img src="img/4.jpg" alt="" />
-      <img src="img/5.jpg" alt="" />
-      <img src="img/6.jpg" alt="" />
-      <img src="img/7.jpg" alt="" />
-      <img src="img/8.jpg" alt="" />
-      <img src="img/9.jpg" alt="" />
-      <img src="img/10.jpg" alt="" />
-      <img src="img/11.jpg" alt="" />
-      <img src="img/12.jpg" alt="" />
-      <img src="img/13.jpg" alt="" />
-      <img src="img/14.jpg" alt="" />
-      <img src="img/15.jpg" alt="" />
-      <img src="img/16.jpg" alt="" />
-      <img src="img/17.jpg" alt="" />
-      <img src="img/18.jpg" alt="" />
-      <img src="img/19.jpg" alt="" />
-      <img src="img/20.jpg" alt="" />
-      <img src="img/21.jpg" alt="" />
-      <img src="img/22.jpg" alt="" />
-      <img src="img/23.jpg" alt="" />
-      <img src="img/24.jpg" alt="" />
-      <img src="img/25.jpg" alt="" />
-      <img src="img/26.jpg" alt="" />
-      <img src="img/27.jpg" alt="" />
-      <img src="img/28.jpg" alt="" />
-      <img src="img/29.jpg" alt="" />
-      <img src="img/30.jpg" alt="" />
-      <img src="img/31.jpg" alt="" />
-      <img src="img/32.jpg" alt="" />
-      <img src="img/33.jpg" alt="" />
-      <img src="img/34.jpg" alt="" />
-      <img src="img/35.jpg" alt="" />
-      <img src="img/36.jpg" alt="" />
-      <img src="img/37.jpg" alt="" />
-      <img src="img/38.jpg" alt="" />
-      <img src="img/39.jpg" alt="" />
-      <img src="img/40.jpg" alt="" />
-      <img src="img/41.jpg" alt="" />
-      <img src="img/42.jpg" alt="" />
-      <img src="img/43.jpg" alt="" />
-      <img src="img/44.jpg" alt="" />
-      <img src="img/45.jpg" alt="" />
-      <img src="img/46.jpg" alt="" />
-    </div>
+
+    <!-- Главная: крупные адаптивные кнопки разделов -->
+    <main id="home" class="route active">
+      <section class="hero">
+        <h1>Productos de resina epoxi personalizados</h1>
+        <p>
+          Mesas, relojes, cuadros, espejos. Enseñamos, cooperamos y fabricamos
+          por encargo.
+        </p>
+      </section>
+
+      <section class="tiles">
+        <a class="tile" href="#tables">
+          <span>Mesas</span>
+        </a>
+        <a class="tile" href="#clocks">
+          <span>Relojes</span>
+        </a>
+        <a class="tile" href="#paintings">
+          <span>Pinturas</span>
+        </a>
+        <a class="tile" href="#mirrors">
+          <span>Espejos</span>
+        </a>
+        <a class="tile" href="#workshop">
+          <span>Taller</span>
+        </a>
+        <a class="tile" href="#souvenirs">
+          <span>Recuerdos</span>
+        </a>
+        <a class="tile" href="#partners">
+          <span>Cooperación</span>
+        </a>
+      </section>
+    </main>
+
+    <!-- Раздел: Столы (img/tables/...) -->
+    <section id="tables" class="route">
+      <h2>Mesas</h2>
+      <div class="gallery">
+        <img src="img/tables/5.jpg" alt="Mesa 5" loading="lazy" />
+        <img src="img/tables/7.jpg" alt="Mesa 7" loading="lazy" />
+        <img src="img/tables/8.jpg" alt="Mesa 8" loading="lazy" />
+        <img src="img/tables/10.jpg" alt="Mesa 10" loading="lazy" />
+        <img src="img/tables/12.jpg" alt="Mesa 12" loading="lazy" />
+        <img src="img/tables/14.jpg" alt="Mesa 14" loading="lazy" />
+        <img src="img/tables/16.jpg" alt="Mesa 16" loading="lazy" />
+        <img src="img/tables/17.jpg" alt="Mesa 17" loading="lazy" />
+        <img src="img/tables/18.jpg" alt="Mesa 18" loading="lazy" />
+        <img src="img/tables/19.jpg" alt="Mesa 19" loading="lazy" />
+        <img src="img/tables/23.jpg" alt="Mesa 23" loading="lazy" />
+        <img src="img/tables/24.jpg" alt="Mesa 24" loading="lazy" />
+        <img src="img/tables/31.jpg" alt="Mesa 31" loading="lazy" />
+        <img src="img/tables/32.jpg" alt="Mesa 32" loading="lazy" />
+        <img src="img/tables/33.jpg" alt="Mesa 33" loading="lazy" />
+        <img src="img/tables/34.jpg" alt="Mesa 34" loading="lazy" />
+        <img src="img/tables/38.jpg" alt="Mesa 38" loading="lazy" />
+        <img src="img/tables/39.jpg" alt="Mesa 39" loading="lazy" />
+        <img src="img/tables/44.jpg" alt="Mesa 44" loading="lazy" />
+        <img src="img/tables/45.jpg" alt="Mesa 45" loading="lazy" />
+        <img
+          src="img/tables/image_2025-07-10-18-37.png"
+          alt="Mesa (png)"
+          loading="lazy"
+        />
+        <img
+          src="img/tables/image_2025-07-11-00-19-07.png"
+          alt="Mesa (png)"
+          loading="lazy"
+        />
+      </div>
+    </section>
+
+    <!-- Раздел: Часы (img/clocks/...) -->
+    <section id="clocks" class="route">
+      <h2>Relojes</h2>
+      <div class="gallery">
+        <!-- Положил несколько; остальные — добавить позже тем же образом -->
+        <img
+          src="img/clocks/image_2025-06-27_05-11-41.png"
+          alt="Reloje 1"
+          loading="lazy"
+        />
+        <img
+          src="img/clocks/image_2025-06-27_05-13-53.png"
+          alt="Reloje 2"
+          loading="lazy"
+        />
+        <img
+          src="img/clocks/image_2025-06-27_05-15-01.png"
+          alt="Reloje 3"
+          loading="lazy"
+        />
+        <img
+          src="img/clocks/image_2025-06-27_05-16-30.png"
+          alt="Reloje 4"
+          loading="lazy"
+        />
+        <img
+          src="img/clocks/image_2025-06-27_05-21-44.png"
+          alt="Reloje 5"
+          loading="lazy"
+        />
+        <img
+          src="img/clocks/image_2025-06-27_05-31-10.png"
+          alt="Reloje 6"
+          loading="lazy"
+        />
+        <img
+          src="img/clocks/image_2025-06-27_05-34-27.png"
+          alt="Reloje 7"
+          loading="lazy"
+        />
+      </div>
+    </section>
+
+    <!-- Раздел: Pinturas (img/paintings/...) -->
+    <section id="paintings" class="route">
+      <h2>Pinturas</h2>
+      <div class="gallery">
+        <img src="img/paintings/21.jpg" alt="Pintura 21" loading="lazy" />
+        <img src="img/paintings/29.jpg" alt="Pintura 29" loading="lazy" />
+        <img src="img/paintings/41.jpg" alt="Pintura 41" loading="lazy" />
+      </div>
+    </section>
+
+    <!-- Раздел: Espejos (img/mirrors/...) -->
+    <section id="mirrors" class="route">
+      <h2>Espejos</h2>
+      <div class="gallery">
+        <img src="img/mirrors/20.jpg" alt="Espejo 20" loading="lazy" />
+      </div>
+    </section>
+
+    <!-- Доп. раздел 1: Мастерская -->
+    <section id="workshop" class="route">
+      <h2>Taller</h2>
+      <p class="lead">
+        Proceso de fabricación: colada, rectificado, pulido, montaje.
+      </p>
+      <div class="gallery">
+        <!-- Когда добавлю фото, положу в img/workshop/... и допишу теги <img> -->
+        <!-- <img src="img/workshop/01.jpg" alt="Процесс 1" loading="lazy"> -->
+      </div>
+    </section>
+
+    <!-- Доп. раздел 2: Recuerdos -->
+    <section id="souvenirs" class="route">
+      <h2>Recuerdos</h2>
+      <p class="lead">
+        Llaveros, colgantes, juguetes de fin de año, pequeños regalos por
+        encargo.
+      </p>
+      <div class="gallery">
+        <!-- Файлы в img/souvenirs/... -->
+      </div>
+    </section>
+
+    <!-- Доп. раздел 3: Приглашение к сотрудничеству -->
+    <section id="partners" class="route">
+      <h2>Invitación a la cooperación</h2>
+      <div class="partner-grid">
+        <article class="card">
+          <h3>Educación</h3>
+          <p>
+            Impartimos clases magistrales y cursos, tanto individuales como
+            grupales. Ofrecemos programas, listas de verificación y apoyo.
+          </p>
+        </article>
+        <article class="card">
+          <h3>Materiales y formas</h3>
+          <p>
+            Ayudamos con la compra de resina, pigmentos, formas y accesorios.
+            Ofrecemos kits de inicio para el taller.
+          </p>
+        </article>
+        <article class="card">
+          <h3>Asociación</h3>
+          <p>
+            Buscamos socios y puntos de venta. Proyectos conjuntos para su marca
+            y para la exportación.
+          </p>
+        </article>
+        <article class="card">
+          <h3>Contacto</h3>
+          <p>
+            WhatsApp / Telegram: <strong>+52&nbsp;…</strong><br />Email:
+            <strong>…@…</strong>
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <footer class="site-footer">
+      <p>© 2025 PSICO EPOXY · Cancun</p>
+    </footer>
+
+    <script>
+      // Мобильное меню
+      const btn = document.querySelector(".nav-toggle");
+      const nav = document.querySelector(".nav");
+      btn.addEventListener("click", () => nav.classList.toggle("open"));
+
+      // Роутинг по hash: показывает только активный раздел
+      function showRoute() {
+        const hash = location.hash || "#home";
+        document
+          .querySelectorAll(".route")
+          .forEach((s) => s.classList.remove("active"));
+        const active = document.querySelector(hash);
+        if (active) active.classList.add("active");
+        // Закрыть меню после перехода
+        nav.classList.remove("open");
+        // Прокрутка к началу раздела
+        window.scrollTo({ top: 0, behavior: "instant" });
+      }
+      window.addEventListener("hashchange", showRoute);
+      showRoute();
+    </script>
   </body>
 </html>

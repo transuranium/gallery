@@ -1,43 +1,289 @@
+/* ---------- ШРИФТЫ ---------- */
+@font-face {
+  font-family: "Alice";
+  src: url("fonts/Alice-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "CormorantGaramond";
+  src: url("fonts/CormorantGaramond-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "CormorantGaramond";
+  src: url("fonts/CormorantGaramond-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "CormorantGaramond";
+  src: url("fonts/CormorantGaramond-SemiBold.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "CormorantGaramond";
+  src: url("fonts/CormorantGaramond-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ---------- БАЗА / ТЕМА (фиолетовая) ---------- */
+:root {
+  --bg: #0b0612; /* очень тёмный фиолетовый (фон сайта) */
+  --panel: #1b1230; /* панели/карточки */
+  --accent: #8b5cf6; /* основной акцент (фиолетовый) */
+  --accent-2: #a78bfa; /* светлее */
+  --text: #f3f0ff; /* основной текст */
+  --muted: #cfc6ff; /* вторичный текст */
+  --tile: linear-gradient(135deg, #5b21b6 0%, #7c3aed 50%, #a78bfa 100%);
+  --radius: 18px;
+  --shadow: 0 10px 30px rgba(136, 93, 246, 0.25);
+}
+
 * {
   box-sizing: border-box;
 }
-
+html,
+body {
+  height: 100%;
+}
 body {
   margin: 0;
-  font-family: sans-serif;
-  background: #f5f6f7;
+  color: var(--text);
+  background: var(--bg);
+  font-family: "CormorantGaramond", system-ui, -apple-system, "Segoe UI", Roboto,
+    Arial, sans-serif;
+  line-height: 1.5;
+  font-size: clamp(16px, 1.2vw, 20px);
 }
 
-.header {
-  text-align: center;
-  text-transform: uppercase;
-  padding: 32px;
-  background-color: #0a0a23;
-  color: #fff;
-  border-bottom: 4px solid #fdb347;
-}
-
-.gallery {
+/* ---------- ХЕДЕР ---------- */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
   align-items: center;
   gap: 16px;
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 20px 10px;
+  padding: 12px 16px;
+  background: rgba(11, 6, 18, 0.8);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(167, 139, 250, 0.25);
+}
+.brand {
+  font-family: "Alice", serif;
+  font-size: clamp(20px, 2.2vw, 28px);
+  letter-spacing: 0.06em;
+  text-decoration: none;
+  color: var(--accent-2);
+}
+.nav {
+  display: flex;
+  gap: 12px;
+  margin-left: auto;
+}
+.nav a {
+  color: var(--muted);
+  text-decoration: none;
+  padding: 8px 12px;
+  border-radius: 10px;
+  transition: 0.2s ease;
+}
+.nav a:hover {
+  background: rgba(167, 139, 250, 0.12);
+  color: var(--text);
 }
 
+/* Мобильная навигация */
+.nav-toggle {
+  display: none;
+  margin-left: auto;
+  width: 40px;
+  height: 36px;
+  border: 0;
+  border-radius: 10px;
+  background: var(--accent);
+  box-shadow: var(--shadow);
+}
+@media (max-width: 880px) {
+  .nav {
+    position: fixed;
+    right: 12px;
+    top: 62px;
+    display: none;
+    flex-direction: column;
+    background: var(--panel);
+    border: 1px solid rgba(167, 139, 250, 0.2);
+    border-radius: 12px;
+    padding: 10px;
+    width: min(70vw, 320px);
+    box-shadow: var(--shadow);
+  }
+  .nav.open {
+    display: flex;
+  }
+  .nav-toggle {
+    display: block;
+  }
+}
+
+/* ---------- ГЕРО-СЕКЦИЯ ---------- */
+.hero {
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding: clamp(32px, 8vw, 80px) 16px 12px;
+}
+.hero h1 {
+  margin: 0 0 8px;
+  font-family: "Alice", serif;
+  font-size: clamp(28px, 6vw, 54px);
+}
+.hero p {
+  margin: 0;
+  color: var(--muted);
+  font-size: clamp(14px, 2.4vw, 18px);
+}
+
+/* ---------- КНОПКИ-РАЗДЕЛЫ НА ГЛАВНОЙ ---------- */
+.tiles {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(240px, 100%), 1fr));
+  gap: 16px;
+  padding: 18px 16px 42px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.tile {
+  display: grid;
+  place-items: center;
+  aspect-ratio: 16/10;
+  background: var(--tile);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  text-decoration: none;
+  color: #fff;
+  font-weight: 600;
+  font-size: clamp(18px, 3.4vw, 28px);
+  letter-spacing: 0.02em;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.tile:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 34px rgba(136, 93, 246, 0.35);
+}
+
+/* ---------- РОУТЫ (разделы) ---------- */
+.route {
+  display: none;
+  padding: 22px 16px 60px;
+}
+.route.active {
+  display: block;
+}
+.route > h2 {
+  font-family: "Alice", serif;
+  font-size: clamp(22px, 4.5vw, 40px);
+  margin: 10px auto 12px;
+  max-width: 1200px;
+}
+.lead {
+  margin: 0 auto 16px;
+  max-width: 900px;
+  color: var(--muted);
+  font-size: clamp(16px, 1.1vw, 19px);
+}
+
+/* ---------- ГАЛЕРЕЯ ---------- */
+.gallery {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(auto-fill, minmax(min(240px, 100%), 1fr));
+}
 .gallery img {
   width: 100%;
-  max-width: 350px;
-  height: 300px;
-  object-fit: cover;
-  border-radius: 10px;
+  height: auto; /* ← НЕ искажает изображение */
+  display: block;
+  border-radius: 14px;
+  border: 1px solid rgba(167, 139, 250, 0.25);
+  background: #120a1f;
+  box-shadow: var(--shadow);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.gallery img:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 34px rgba(136, 93, 246, 0.35);
 }
 
-.gallery::after {
-  content: "";
-  width: 350px;
+/* ---------- КАРТОЧКИ ДЛЯ "Сотрудничество" ---------- */
+.partner-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  gap: 14px;
+  grid-template-columns: repeat(auto-fill, minmax(min(260px, 100%), 1fr));
+}
+.card {
+  background: var(--panel);
+  border: 1px solid rgba(167, 139, 250, 0.25);
+  border-radius: var(--radius);
+  padding: 16px 14px;
+  box-shadow: var(--shadow);
+}
+.card h3 {
+  margin: 6px 0 6px;
+  font-weight: 600;
+}
+.card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 1rem;
+}
+
+/* ---------- ФУТЕР ---------- */
+.site-footer {
+  padding: 26px 16px;
+  border-top: 1px solid rgba(167, 139, 250, 0.25);
+  color: var(--muted);
+  text-align: center;
+}
+
+/* Небольшие косметические штуки */
+img {
+  -webkit-user-drag: none;
+  user-select: none;
+}
+a,
+button {
+  cursor: pointer;
+}
+
+/* === КРУПНЕЕ ПАРАГРАФЫ / СПИСКИ === */
+p,
+li {
+  font-size: clamp(18px, 1.3vw, 22px);
+  line-height: 1.7;
+}
+
+/* геро-абзац был меньше — увеличим тоже */
+.hero p {
+  font-size: clamp(18px, 1.5vw, 22px);
+  line-height: 1.7;
+}
+
+/* при необходимости — текст в карточках и лиды */
+.card p,
+.lead {
+  font-size: clamp(17px, 1.2vw, 21px);
+  line-height: 1.65;
 }
