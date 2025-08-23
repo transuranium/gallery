@@ -3,14 +3,15 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Galería de productos de resina epoxi</title>
+    <title>Galería de Resina Mágica</title>
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
     <header class="site-header">
-      <a class="brand" href="#home">PSICO EPOXY</a>
+      <a class="brand" href="#home">Galería de Resina Mágica</a>
       <nav class="nav">
         <a href="#tables">Mesas</a>
+        <a href="#floors">Pisos</a>
         <a href="#clocks">Relojes</a>
         <a href="#paintings">Pinturas</a>
         <a href="#mirrors">Espejos</a>
@@ -18,86 +19,194 @@
         <a href="#souvenirs">Recuerdos</a>
         <a href="#partners">Cooperación</a>
       </nav>
-      <button class="nav-toggle" aria-label="Меню"></button>
+      <button class="nav-toggle" aria-label="Menú"></button>
     </header>
 
-    <!-- Главная: крупные адаптивные кнопки разделов -->
     <main id="home" class="route active">
       <section class="hero">
         <h1>Productos de resina epoxi personalizados</h1>
         <p>
-          Mesas, relojes, cuadros, espejos. Enseñamos, cooperamos y fabricamos
-          por encargo.
+          Mesas (incluye cocinas y barras), pisos, relojes, cuadros y espejos.
+          Enseñamos, colaboramos y trabajamos por encargo.
         </p>
       </section>
 
       <section class="tiles">
-        <a class="tile" href="#tables">
-          <span>Mesas</span>
-        </a>
-        <a class="tile" href="#clocks">
-          <span>Relojes</span>
-        </a>
-        <a class="tile" href="#paintings">
-          <span>Pinturas</span>
-        </a>
-        <a class="tile" href="#mirrors">
-          <span>Espejos</span>
-        </a>
-        <a class="tile" href="#workshop">
-          <span>Taller</span>
-        </a>
-        <a class="tile" href="#souvenirs">
-          <span>Recuerdos</span>
-        </a>
-        <a class="tile" href="#partners">
-          <span>Cooperación</span>
-        </a>
+        <a class="tile" href="#tables"><span>Mesas</span></a>
+        <a class="tile" href="#floors"><span>Pisos</span></a>
+        <a class="tile" href="#clocks"><span>Relojes</span></a>
+        <a class="tile" href="#paintings"><span>Pinturas</span></a>
+        <a class="tile" href="#mirrors"><span>Espejos</span></a>
+        <a class="tile" href="#workshop"><span>Taller</span></a>
+        <a class="tile" href="#souvenirs"><span>Recuerdos</span></a>
+        <a class="tile" href="#partners"><span>Cooperación</span></a>
       </section>
     </main>
 
-    <!-- Раздел: Столы (img/tables/...) -->
+    <!-- Mesas (con filtros) -->
     <section id="tables" class="route">
       <h2>Mesas</h2>
+
+      <div class="filters" data-scope="tables">
+        <button class="chip active" data-filter="*">Todo</button>
+        <button class="chip" data-filter="mesa">Mesas</button>
+        <button class="chip" data-filter="cocina">Cocinas</button>
+        <button class="chip" data-filter="barra">Barras</button>
+      </div>
+
       <div class="gallery">
-        <img src="img/tables/5.jpg" alt="Mesa 5" loading="lazy" />
-        <img src="img/tables/7.jpg" alt="Mesa 7" loading="lazy" />
-        <img src="img/tables/8.jpg" alt="Mesa 8" loading="lazy" />
-        <img src="img/tables/10.jpg" alt="Mesa 10" loading="lazy" />
-        <img src="img/tables/12.jpg" alt="Mesa 12" loading="lazy" />
-        <img src="img/tables/14.jpg" alt="Mesa 14" loading="lazy" />
-        <img src="img/tables/16.jpg" alt="Mesa 16" loading="lazy" />
-        <img src="img/tables/17.jpg" alt="Mesa 17" loading="lazy" />
-        <img src="img/tables/18.jpg" alt="Mesa 18" loading="lazy" />
-        <img src="img/tables/19.jpg" alt="Mesa 19" loading="lazy" />
-        <img src="img/tables/23.jpg" alt="Mesa 23" loading="lazy" />
-        <img src="img/tables/24.jpg" alt="Mesa 24" loading="lazy" />
-        <img src="img/tables/31.jpg" alt="Mesa 31" loading="lazy" />
-        <img src="img/tables/32.jpg" alt="Mesa 32" loading="lazy" />
-        <img src="img/tables/33.jpg" alt="Mesa 33" loading="lazy" />
-        <img src="img/tables/34.jpg" alt="Mesa 34" loading="lazy" />
-        <img src="img/tables/38.jpg" alt="Mesa 38" loading="lazy" />
-        <img src="img/tables/39.jpg" alt="Mesa 39" loading="lazy" />
-        <img src="img/tables/44.jpg" alt="Mesa 44" loading="lazy" />
-        <img src="img/tables/45.jpg" alt="Mesa 45" loading="lazy" />
+        <!-- пока все como mesa; меняй data-type="cocina"/"barra" по мере появления -->
+        <img
+          src="img/tables/5.jpg"
+          alt="Mesa 5"
+          loading="lazy"
+          data-type="mesa"
+        />
+        <img
+          src="img/tables/7.jpg"
+          alt="Mesa 7"
+          loading="lazy"
+          data-type="mesa"
+        />
+        <img
+          src="img/tables/8.jpg"
+          alt="Mesa 8"
+          loading="lazy"
+          data-type="mesa"
+        />
+        <img
+          src="img/tables/10.jpg"
+          alt="Mesa 10"
+          loading="lazy"
+          data-type="mesa"
+        />
+        <img
+          src="img/tables/12.jpg"
+          alt="Mesa 12"
+          loading="lazy"
+          data-type="mesa"
+        />
+        <img
+          src="img/tables/14.jpg"
+          alt="Mesa 14"
+          loading="lazy"
+          data-type="mesa"
+        />
+        <img
+          src="img/tables/16.jpg"
+          alt="Mesa 16"
+          loading="lazy"
+          data-type="mesa"
+        />
+        <img
+          src="img/tables/17.jpg"
+          alt="Mesa 17"
+          loading="lazy"
+          data-type="mesa"
+        />
+        <img
+          src="img/tables/18.jpg"
+          alt="Mesa 18"
+          loading="lazy"
+          data-type="mesa"
+        />
+        <img
+          src="img/tables/19.jpg"
+          alt="Mesa 19"
+          loading="lazy"
+          data-type="mesa"
+        />
+        <img
+          src="img/tables/23.jpg"
+          alt="Mesa 23"
+          loading="lazy"
+          data-type="mesa"
+        />
+        <img
+          src="img/tables/24.jpg"
+          alt="Mesa 24"
+          loading="lazy"
+          data-type="mesa"
+        />
+        <img
+          src="img/tables/31.jpg"
+          alt="Mesa 31"
+          loading="lazy"
+          data-type="mesa"
+        />
+        <img
+          src="img/tables/32.jpg"
+          alt="Mesa 32"
+          loading="lazy"
+          data-type="mesa"
+        />
+        <img
+          src="img/tables/33.jpg"
+          alt="Mesa 33"
+          loading="lazy"
+          data-type="mesa"
+        />
+        <img
+          src="img/tables/34.jpg"
+          alt="Mesa 34"
+          loading="lazy"
+          data-type="mesa"
+        />
+        <img
+          src="img/tables/38.jpg"
+          alt="Mesa 38"
+          loading="lazy"
+          data-type="mesa"
+        />
+        <img
+          src="img/tables/39.jpg"
+          alt="Mesa 39"
+          loading="lazy"
+          data-type="mesa"
+        />
+        <img
+          src="img/tables/44.jpg"
+          alt="Mesa 44"
+          loading="lazy"
+          data-type="mesa"
+        />
+        <img
+          src="img/tables/45.jpg"
+          alt="Mesa 45"
+          loading="lazy"
+          data-type="mesa"
+        />
         <img
           src="img/tables/image_2025-07-10-18-37.png"
           alt="Mesa (png)"
           loading="lazy"
+          data-type="mesa"
         />
         <img
           src="img/tables/image_2025-07-11-00-19-07.png"
           alt="Mesa (png)"
           loading="lazy"
+          data-type="mesa"
         />
       </div>
     </section>
 
-    <!-- Раздел: Часы (img/clocks/...) -->
+    <!-- Pisos -->
+    <section id="floors" class="route">
+      <h2>Pisos</h2>
+      <p class="lead">
+        Revestimientos de resina epoxi para casas y negocios: alta resistencia,
+        brillo profundo y mantenimiento sencillo.
+      </p>
+      <div class="gallery">
+        <!-- <img src="img/floors/01.jpg" alt="Piso 01" loading="lazy"> -->
+      </div>
+    </section>
+
+    <!-- Остальные разделы -->
     <section id="clocks" class="route">
       <h2>Relojes</h2>
       <div class="gallery">
-        <!-- Положил несколько; остальные — добавить позже тем же образом -->
         <img
           src="img/clocks/image_2025-06-27_05-11-41.png"
           alt="Reloje 1"
@@ -136,7 +245,6 @@
       </div>
     </section>
 
-    <!-- Раздел: Pinturas (img/paintings/...) -->
     <section id="paintings" class="route">
       <h2>Pinturas</h2>
       <div class="gallery">
@@ -146,7 +254,6 @@
       </div>
     </section>
 
-    <!-- Раздел: Espejos (img/mirrors/...) -->
     <section id="mirrors" class="route">
       <h2>Espejos</h2>
       <div class="gallery">
@@ -154,61 +261,41 @@
       </div>
     </section>
 
-    <!-- Доп. раздел 1: Мастерская -->
     <section id="workshop" class="route">
       <h2>Taller</h2>
       <p class="lead">
         Proceso de fabricación: colada, rectificado, pulido, montaje.
       </p>
-      <div class="gallery">
-        <!-- Когда добавлю фото, положу в img/workshop/... и допишу теги <img> -->
-        <!-- <img src="img/workshop/01.jpg" alt="Процесс 1" loading="lazy"> -->
-      </div>
+      <div class="gallery"></div>
     </section>
 
-    <!-- Доп. раздел 2: Recuerdos -->
     <section id="souvenirs" class="route">
       <h2>Recuerdos</h2>
       <p class="lead">
         Llaveros, colgantes, juguetes de fin de año, pequeños regalos por
         encargo.
       </p>
-      <div class="gallery">
-        <!-- Файлы в img/souvenirs/... -->
-      </div>
+      <div class="gallery"></div>
     </section>
 
-    <!-- Доп. раздел 3: Приглашение к сотрудничеству -->
     <section id="partners" class="route">
       <h2>Invitación a la cooperación</h2>
       <div class="partner-grid">
         <article class="card">
           <h3>Educación</h3>
-          <p>
-            Impartimos clases magistrales y cursos, tanto individuales como
-            grupales. Ofrecemos programas, listas de verificación y apoyo.
-          </p>
+          <p>Impartimos clases magistrales y cursos…</p>
         </article>
         <article class="card">
           <h3>Materiales y formas</h3>
-          <p>
-            Ayudamos con la compra de resina, pigmentos, formas y accesorios.
-            Ofrecemos kits de inicio para el taller.
-          </p>
+          <p>Ayudamos con la compra de resina…</p>
         </article>
         <article class="card">
           <h3>Asociación</h3>
-          <p>
-            Buscamos socios y puntos de venta. Proyectos conjuntos para su marca
-            y para la exportación.
-          </p>
+          <p>Buscamos socios y puntos de venta…</p>
         </article>
         <article class="card">
           <h3>Contacto</h3>
-          <p>
-            WhatsApp / Telegram: <strong>+52&nbsp;…</strong><br />Email:
-            <strong>…@…</strong>
-          </p>
+          <p>WhatsApp / Telegram: <strong>+52 …</strong></p>
         </article>
       </div>
     </section>
@@ -218,12 +305,10 @@
     </footer>
 
     <script>
-      // Мобильное меню
       const btn = document.querySelector(".nav-toggle");
       const nav = document.querySelector(".nav");
       btn.addEventListener("click", () => nav.classList.toggle("open"));
 
-      // Роутинг по hash: показывает только активный раздел
       function showRoute() {
         const hash = location.hash || "#home";
         document
@@ -231,13 +316,29 @@
           .forEach((s) => s.classList.remove("active"));
         const active = document.querySelector(hash);
         if (active) active.classList.add("active");
-        // Закрыть меню после перехода
         nav.classList.remove("open");
-        // Прокрутка к началу раздела
         window.scrollTo({ top: 0, behavior: "instant" });
       }
       window.addEventListener("hashchange", showRoute);
       showRoute();
+
+      // фильтр внутри Mesas
+      const scope = document.querySelector('.filters[data-scope="tables"]');
+      if (scope) {
+        scope.addEventListener("click", (e) => {
+          const b = e.target.closest(".chip");
+          if (!b) return;
+          scope
+            .querySelectorAll(".chip")
+            .forEach((x) => x.classList.remove("active"));
+          b.classList.add("active");
+          const val = b.dataset.filter;
+          document.querySelectorAll("#tables .gallery img").forEach((img) => {
+            const type = img.dataset.type || "mesa";
+            img.style.display = val === "*" || val === type ? "" : "none";
+          });
+        });
+      }
     </script>
   </body>
 </html>
