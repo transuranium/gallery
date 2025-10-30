@@ -43,3 +43,36 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // Фильтров Mesas нет по ТЗ.
+
+(function(){
+  const lb = document.getElementById('lightbox');
+  if(!lb) return;
+  const imgEl = lb.querySelector('img');
+
+  function openLB(src, alt){
+    imgEl.src = src; imgEl.alt = alt || '';
+    lb.classList.add('open'); lb.setAttribute('aria-hidden','false');
+  }
+  function closeLB(){
+    lb.classList.remove('open'); lb.setAttribute('aria-hidden','true');
+    imgEl.src = ''; imgEl.alt = '';
+  }
+
+  document.addEventListener('click', (e)=>{
+    const t = e.target;
+    // клик по картинке
+    if (t instanceof HTMLImageElement && !t.hasAttribute('data-nozoom')) {
+      // если картинка внутри <a>, не переходить по ссылке
+      const a = t.closest('a');
+      if (a) e.preventDefault();
+      openLB(t.currentSrc || t.src, t.alt);
+    } else if (t === lb || t === imgEl) {
+      // клик по оверлею или по самой увеличенной картинке закрывает
+      closeLB();
+    }
+  });
+
+  document.addEventListener('keydown', (e)=>{
+    if (e.key === 'Escape') closeLB();
+  });
+})();
