@@ -1,35 +1,35 @@
 /* ---------- ШРИФТЫ ---------- */
 @font-face {
   font-family: "Alice";
-  src: url("fonts/Alice-Regular.woff2") format("woff2");
+  src: url("../fonts/alice-regular.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "CormorantGaramond";
-  src: url("fonts/CormorantGaramond-Regular.woff2") format("woff2");
+  src: url("../fonts/cormorantgaramond-regular.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "CormorantGaramond";
-  src: url("fonts/CormorantGaramond-Medium.woff2") format("woff2");
+  src: url("../fonts/cormorantgaramond-medium.woff2") format("woff2");
   font-weight: 500;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "CormorantGaramond";
-  src: url("fonts/CormorantGaramond-SemiBold.woff2") format("woff2");
+  src: url("../fonts/cormorantgaramond-semibold.woff2") format("woff2");
   font-weight: 600;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "CormorantGaramond";
-  src: url("fonts/CormorantGaramond-Bold.woff2") format("woff2");
+  src: url("../fonts/cormorantgaramond-bold.woff2") format("woff2");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
@@ -320,3 +320,10 @@ body {
   pointer-events: none;
   white-space: nowrap;
 }
+
+/* Lightbox (site-wide) */
+.lightbox{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,.8);z-index:9999}
+.lightbox.open{display:flex}
+.lightbox img{max-width:90vw;max-height:90vh;box-shadow:0 10px 30px rgba(0,0,0,.6);border-radius:8px;cursor:zoom-out}
+/* Указатель курсора для зумируемых изображений */
+img:not([data-nozoom]){cursor:zoom-in}
