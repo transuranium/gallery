@@ -44,26 +44,30 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // Фильтров Mesas нет по ТЗ.
 
-(function(){
-  const lb = document.getElementById('lightbox');
-  if(!lb) return;
-  const imgEl = lb.querySelector('img');
+(function () {
+  const lb = document.getElementById("lightbox");
+  if (!lb) return;
+  const imgEl = lb.querySelector("img");
 
-  function openLB(src, alt){
-    imgEl.src = src; imgEl.alt = alt || '';
-    lb.classList.add('open'); lb.setAttribute('aria-hidden','false');
+  function openLB(src, alt) {
+    imgEl.src = src;
+    imgEl.alt = alt || "";
+    lb.classList.add("open");
+    lb.setAttribute("aria-hidden", "false");
   }
-  function closeLB(){
-    lb.classList.remove('open'); lb.setAttribute('aria-hidden','true');
-    imgEl.src = ''; imgEl.alt = '';
+  function closeLB() {
+    lb.classList.remove("open");
+    lb.setAttribute("aria-hidden", "true");
+    imgEl.src = "";
+    imgEl.alt = "";
   }
 
-  document.addEventListener('click', (e)=>{
+  document.addEventListener("click", (e) => {
     const t = e.target;
     // клик по картинке
-    if (t instanceof HTMLImageElement && !t.hasAttribute('data-nozoom')) {
+    if (t instanceof HTMLImageElement && !t.hasAttribute("data-nozoom")) {
       // если картинка внутри <a>, не переходить по ссылке
-      const a = t.closest('a');
+      const a = t.closest("a");
       if (a) e.preventDefault();
       openLB(t.currentSrc || t.src, t.alt);
     } else if (t === lb || t === imgEl) {
@@ -72,7 +76,24 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  document.addEventListener('keydown', (e)=>{
-    if (e.key === 'Escape') closeLB();
+  // Поддержка сенсорных устройств: tap для открытия/закрытия
+  document.addEventListener(
+    "touchstart",
+    (e) => {
+      const t = e.target;
+      if (t instanceof HTMLImageElement && !t.hasAttribute("data-nozoom")) {
+        const a = t.closest("a");
+        if (a) e.preventDefault();
+        openLB(t.currentSrc || t.src, t.alt);
+      } else if (t === lb || t === imgEl) {
+        e.preventDefault();
+        closeLB();
+      }
+    },
+    { passive: false }
+  );
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeLB();
   });
 })();
